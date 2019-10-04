@@ -10,7 +10,24 @@ In this activity we're going to create a Magic 8 Ball application.  We'll use a 
 
 ### Getting started
 
-All the code you'll need to write for this app is going to be inside one function in the ```/src/App.js``` file.  Here's what that file looks like to start:
+All the code you'll need to write for this app is going to be inside one function in the ```/src/App.js``` file.
+
+After you accept the assignment (or clone this repo), you'll want to install all the npm packages using Yarn:
+
+```bash
+$ cd ./magic-8-ball
+$ yarn install
+```
+
+Then you are ready to start a server to run the application:
+
+```bash
+$ yarn start
+```
+
+Now you're ready to code!
+
+Here's what that file looks like to start:
 
 ```javascript
 import React from 'react';
