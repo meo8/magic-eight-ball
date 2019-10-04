@@ -15,8 +15,20 @@ All the code you'll need to write for this app is going to be inside one functio
 After you accept the assignment (or clone this repo), you'll want to install all the npm packages using Yarn:
 
 ```bash
-$ cd ./magic-8-ball
+$ cd ./Magic-8-ball-activity
 $ yarn install
+```
+
+If you get an error about Yarn not being found:
+```bash
+Command 'yarn' not found, but can be installed with:
+sudo apt install cmdtest
+```
+
+You can install it with:
+
+```bash
+$ npm install -g yarn
 ```
 
 Then you are ready to start a server to run the application:
@@ -76,4 +88,7 @@ class App extends React.Component {
 export default App;
 ```
 
-To get started, find the ```getAnswer``` function, and write your code.
+To get started, find the ```getAnswer``` function, and write your code.  Everytime you save your updated file, the browser window displaying your app will reload.
+
+### A note for Cloud 9 users
+Once you run the ```yarn start``` command above,  You'll want to click the 'Preview' button to see your running application.
