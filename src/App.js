@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      answer: null
+    }
+  }
+
+  getAnswer = () => {
+    //This is where you will write your Magic 8 Ball code
+    return "The Magic 8 ball answer"
+  }
+
+  handleSubmit = () =>{
+    const answer = this.getAnswer()
+    this.setState({answer: answer})
+  }
+
+  render(){
+    return (
+      <div>
+        <h1>Magic 8 Ball</h1>
+        <input
+          type='text'
+        />
+        <br />
+        <button
+          onClick={this.handleSubmit}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          Ask the Magic 8 Ball
+        </button>
+
+        {this.state.answer &&
+          <h2> The Magic 8 Ball says: {this.state.answer} </h2>
+        }
+      </div>
+    )
+  }
 }
 
 export default App;
