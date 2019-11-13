@@ -21,8 +21,7 @@ $ yarn install
 
 If you get an error about Yarn not being found:
 ```bash
-Command 'yarn' not found, but can be installed with:
-sudo apt install cmdtest
+Command 'yarn' not found
 ```
 
 You can install it with:
