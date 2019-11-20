@@ -90,4 +90,4 @@ export default App;
 To get started, find the ```getAnswer``` function, and write your code.  Everytime you save your updated file, the browser window displaying your app will reload.
 
 ### A note for Cloud 9 users
-Once you run the ```yarn start``` command above,  You'll want to click the 'Preview' button to see your running application.
+Once you run the ```yarn start``` command above,  You'll want to click the 'Preview' button to see your running application.  Should you need to refer to the [Cloud 9 Configuration Instructions](https://github.com/LEARNAcademy/cloud9-config) they can be found in your Syllabus.
