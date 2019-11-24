@@ -5,18 +5,35 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      answer: null
+      answerArray: ["Holy Smokes!", "No way, Jose", "Sure, why not?", "Yeah, Imma say no", "Umm.. seriously?", "Yaaaas girl", "If you say so"],
+      answer: null,
+      question: ""
     }
   }
 
   getAnswer = () => {
-    //This is where you will write your Magic 8 Ball code
-    return "The Magic 8 ball answer"
+    // destructures answerArray out of state
+    const { answerArray } = this.state
+    // creates a random number
+    let randomNumber = Math.floor(Math.random() * answerArray.length)
+    return answerArray[randomNumber]
+  }
+
+  handleChange = (e) => {
+    // gets the event from the input on change and updates state
+    this.setState({question: e.target.value})
   }
 
   handleSubmit = () =>{
-    const answer = this.getAnswer()
-    this.setState({answer: answer})
+    // destructures question out of state
+    const { question } = this.state
+    // checks to see if there is a question in the input
+    if(question.length > 0 && question.includes("?")){
+      // calls the getAnswer function and saves the outcome as answer
+      const answer = this.getAnswer()
+      // sets state as the outcome to the getAnswer function in all uppercase for Magic8 Ball styling
+      this.setState({answer: answer.toUpperCase()})
+    }
   }
 
   render(){
@@ -24,18 +41,25 @@ class App extends React.Component {
       <div>
         <h1>Magic 8 Ball</h1>
         <input
+          id="inputBox"
           type='text'
+          onChange={this.handleChange}
         />
         <br />
         <button
+          id="submitButton"
           onClick={this.handleSubmit}
         >
-          Ask the Magic 8 Ball
+          Ask the Magic 8 Ball a Question
         </button>
+        <div id="eightBall">
+          <div id="eight">8</div>
 
-        {this.state.answer &&
-          <h2> The Magic 8 Ball says: {this.state.answer} </h2>
-        }
+          {this.state.answer &&
+            <p id="answer"> {this.state.answer} </p>
+          }
+
+        </div>
       </div>
     )
   }
