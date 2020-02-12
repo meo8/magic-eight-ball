@@ -28,7 +28,7 @@ class App extends React.Component {
   handleSubmit = () =>{
     const { question } = this.state;
 
-    if (question.indexOf('?') !== question.length - 1 || question === '') {
+    if (question.indexOf('?') !== question.length - 1 || question.indexOf('?') === 0 || question === '') {
       this.setState({ answer: 'Please ask a question; don\'t forget the question mark!' })
     } else {
       // calls the getAnswer function and updates answer's state with it
@@ -54,13 +54,11 @@ class App extends React.Component {
           onChange={ this.handleChange }
         />
         <br />
-        <button id="submitBtn" onClick={ this.handleSubmit }>
-          Ask the Magic 8 Ball a Question
-        </button>
-        <button id="resetBtn" onClick={ this.reset }>
-          Reset
-        </button>
-        <p> { this.state.answer } </p>
+        <button onClick={ this.handleSubmit }>Ask the Magic 8 Ball a Question</button>
+        <button onClick={ this.reset }>Reset</button>
+        <div id="answerBox">
+          <p> { this.state.answer } </p>
+        </div>
       </div>
     );
   }
